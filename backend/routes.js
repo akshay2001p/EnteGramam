@@ -14,4 +14,14 @@ app.post("/add_user", async (request, response) => {
     }
 });
 
+app.get("/view_user", async (req, res) => {
+  try {
+    const users = await userModel.find().exec();
+    res.status(200).send(users);
+  } catch (err) {
+    res.status(500).send({ message: err.message });
+  }
+});
+
+
 module.exports = app

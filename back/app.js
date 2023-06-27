@@ -23,6 +23,7 @@ app.get("/",(req,res)=>{
 
 //user registration
 app.get("/signup",(req,res)=>{
+  
     res.set({
         "Allow-access-Allow-Origin":"*"
     })
